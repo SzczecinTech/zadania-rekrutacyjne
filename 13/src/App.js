@@ -4,7 +4,7 @@ import './App.css';
 const Description = ({id}) => {
   const [plot, setPlot] = useState('laoding');
   useEffect(() => {
-    fetch(`http://www.omdbapi.com/?i=${id}&apikey=PlzBanMe`)
+    fetch(`https://www.omdbapi.com/?i=${id}&apikey=PlzBanMe`)
       .then(response => response.json())
       .then(movie => {
         setPlot(movie.Plot);
@@ -20,7 +20,7 @@ const Description = ({id}) => {
 function App() {
   const [movies, setMovies] = useState([]);
   useEffect(() => {
-    fetch('http://www.omdbapi.com/?s=robot&apikey=PlzBanMe')
+    fetch('https://www.omdbapi.com/?s=robot&apikey=PlzBanMe')
       .then(response => response.json())
       .then(data => {
         setMovies(data.Search)
